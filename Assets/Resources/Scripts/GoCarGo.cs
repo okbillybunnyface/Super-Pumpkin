@@ -31,11 +31,11 @@ public class GoCarGo : MonoBehaviour {
         LotGen.carChance -= 0.005f * Time.deltaTime;
         if (LotGen.carChance < 0.5f) LotGen.carChance = 0.5f;
         LotGen.mailboxChance -= 0.002f * Time.deltaTime;
-        if (LotGen.mailboxChance < 0.5f) LotGen.mailboxChance = 0.5f;
+        if (LotGen.mailboxChance < 0.6f) LotGen.mailboxChance = 0.6f;
         LotGen.trashcanChance += 0.004f * Time.deltaTime;
         if (LotGen.trashcanChance > 0.4f) LotGen.trashcanChance = 0.4f;
-        LotSpawn.houseChance -= 0.002f * Time.deltaTime;
-        if (LotSpawn.houseChance < 0.7f) LotSpawn.houseChance = 0.7f;
+        LotSpawn.houseChance -= 0.001f * Time.deltaTime;
+        if (LotSpawn.houseChance < 0.8f) LotSpawn.houseChance = 0.8f;
 
         //Controls the engine pitch
         engine.pitch += 0.01f * Time.deltaTime;

@@ -14,13 +14,14 @@ public class LotGen : MonoBehaviour {
 	void Start () 
     {
         playerCar = GameObject.FindGameObjectWithTag("Player");
+        carChance = startCarChance;
+        mailboxChance = startMailboxChance;
+        trashcanChance = startTrashcanChance;
 	}
 
     void OnEnable()
     {
-        carChance = startCarChance;
-        mailboxChance = startMailboxChance;
-        trashcanChance = startTrashcanChance;
+        
     }
 
 	// Update is called once per frame

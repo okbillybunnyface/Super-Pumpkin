@@ -18,7 +18,7 @@ public class ObjectHandler : MonoBehaviour
     void Awake()
     {
         lots = new CircularQueue<GameObject>();
-        for (int i = 0; i < LotGen.maxDist / 6 + 10; i++)
+        for (int i = 0; i < LotGen.maxDist / 3; i++)
         {
             GameObject temp = (GameObject)GameObject.Instantiate(Resources.Load("Prefabs/Lot"));
             temp.SetActive(false);
@@ -26,7 +26,7 @@ public class ObjectHandler : MonoBehaviour
         }
 
         driveways = new CircularQueue<GameObject>();
-        for (int i = 0; i < LotGen.maxDist / 3; i++)
+        for (int i = 0; i < LotGen.maxDist; i++)
         {
             GameObject temp = (GameObject)GameObject.Instantiate(Resources.Load("Art/3D Models/Cars/Driveway"));
             temp.SetActive(false);
@@ -34,7 +34,7 @@ public class ObjectHandler : MonoBehaviour
         }
 
         trashcans = new CircularQueue<GameObject>();
-        for (int i = 0; i < LotGen.maxDist / 3; i++)
+        for (int i = 0; i < LotGen.maxDist; i++)
         {
             GameObject temp = (GameObject)GameObject.Instantiate(Resources.Load("Art/3D Models/trash_can/TrashCan"));
             temp.SetActive(false);
@@ -44,7 +44,7 @@ public class ObjectHandler : MonoBehaviour
         //Fill each tree queue with its tree type
         trees[0] = new CircularQueue<GameObject>();
         trees[1] = new CircularQueue<GameObject>();
-        for ( int j = 0; j < LotGen.maxDist / 6; j++ )
+        for ( int j = 0; j < LotGen.maxDist / 3; j++ )
         {
             GameObject temp;
 
@@ -61,7 +61,7 @@ public class ObjectHandler : MonoBehaviour
 		for (int i = 0; i < houses.Length; i++)
 		{
 			houses[i] = new CircularQueue<GameObject>();
-			for (int j = 0; j < LotGen.maxDist / 12; j++)
+			for (int j = 0; j < LotGen.maxDist / 10; j++)
 			{
 				GameObject temp = (GameObject)GameObject.Instantiate(Resources.Load("Art/3D Models/Houses/Prefabs/House" + i.ToString("D2")));
 				temp.SetActive(false);
@@ -72,7 +72,7 @@ public class ObjectHandler : MonoBehaviour
         for (int i = 0; i < cars.Length; i++)
         {
             cars[i] = new CircularQueue<GameObject>();
-            for (int j = 0; j < LotGen.maxDist / 12; j++)
+            for (int j = 0; j < LotGen.maxDist / 10; j++)
             {
                 GameObject temp = (GameObject)GameObject.Instantiate(Resources.Load("Art/3D Models/Cars/Car" + i));
                 temp.SetActive(false);
@@ -83,7 +83,7 @@ public class ObjectHandler : MonoBehaviour
         for (int i = 0; i < mailboxes.Length; i++)
         {
             mailboxes[i] = new CircularQueue<GameObject>();
-            for (int j = 0; j < LotGen.maxDist / 3; j++)
+            for (int j = 0; j < LotGen.maxDist / 2; j++)
             {
                 GameObject temp = (GameObject)GameObject.Instantiate(Resources.Load("Art/3D Models/Mailbox/Prefabs/Mailbox" + i));
                 temp.SetActive(false);
