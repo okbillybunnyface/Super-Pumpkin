@@ -13,7 +13,7 @@ public class PumpkinCannon : MonoBehaviour {
     public GameObject cameraPosStart, cameraPosOne, cameraPosTwo, cameraPosThree, cameraPosFour;
     public CircularQueue<GameObject> cameras;
     private GameObject playerCar;
-    public Texture2D crosshair, gameOverImage, pausedImage;
+    public Texture2D crosshair;
     public Font font;
 	GUIStyle newFont, titleFont;
     //private bool comboGoing = false;
@@ -220,8 +220,8 @@ public class PumpkinCannon : MonoBehaviour {
         if (timeLeft < 0)
         {
             float gameOverXMin = (Screen.width / 2) - 100 * screenScaleX;
-            float gameOverYMin = (Screen.height / 2) - (gameOverImage.height / 2);
-            GUI.Label(new Rect(gameOverXMin, gameOverYMin, gameOverImage.width, gameOverImage.height), "Game Over!", titleFont);//, ScaleMode.ScaleToFit, true, screenScale);
+            float gameOverYMin = (Screen.height / 2) - 100 * screenScaleX;
+            GUI.Label(new Rect(gameOverXMin, gameOverYMin, 0, 0), "Game Over!", titleFont);//, ScaleMode.ScaleToFit, true, screenScale);
             Time.timeScale = 0;
             if (!gameOver)
             {
@@ -231,9 +231,9 @@ public class PumpkinCannon : MonoBehaviour {
             gameOver = true;
             pause = true;
 
-            GUI.Label(new Rect(gameOverXMin, (gameOverYMin + gameOverImage.height), gameOverImage.width, fontSize), "Distance Traveled: " + (((int)GoCarGo.distanceTraveled)/2).ToString() + " m", newFont);
-            GUI.Label(new Rect(gameOverXMin, (gameOverYMin + gameOverImage.height + fontSize + 5), gameOverImage.width, fontSize), "Time Survived: " + ((int)timeSurvived) + " seconds", newFont);
-            GUI.Label(new Rect(gameOverXMin, (gameOverYMin + gameOverImage.height + fontSize + fontSize + 5), gameOverImage.width, fontSize), "Play again? Press Space", newFont);
+            GUI.Label(new Rect(gameOverXMin, (gameOverYMin + 3f / 2f * fontSize), 0, fontSize), "Distance Traveled: " + (((int)GoCarGo.distanceTraveled) / 2).ToString() + " m", newFont);
+            GUI.Label(new Rect(gameOverXMin, (gameOverYMin + 3f / 2f * fontSize + fontSize + 5), 0, fontSize), "Time Survived: " + ((int)timeSurvived) + " seconds", newFont);
+            GUI.Label(new Rect(gameOverXMin, (gameOverYMin + 3f / 2f * fontSize + fontSize + fontSize + 5), 0, fontSize), "Play again? Press Space", newFont);
 
         }
 
@@ -241,8 +241,8 @@ public class PumpkinCannon : MonoBehaviour {
         if (pause == true)
         {
             float pausedXMin = (Screen.width / 2) - 175 * screenScaleX;
-            float pausedYMin = (Screen.height / 2) - (pausedImage.height / 2);
-            if(!gameOver)GUI.Label(new Rect(pausedXMin, pausedYMin, pausedImage.width, pausedImage.height), "Paused", titleFont);
+            float pausedYMin = (Screen.height / 2);
+            if(!gameOver)GUI.Label(new Rect(pausedXMin, pausedYMin, 0, 0), "Paused", titleFont);
 
             if (GUI.Button(new Rect((Screen.width - (Screen.width/6)), Screen.height-60, Screen.width/6, 60), "Menu", newFont)) 
             {
