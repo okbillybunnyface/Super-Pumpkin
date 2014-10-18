@@ -94,7 +94,7 @@ public class PumpkinCannon : MonoBehaviour {
             LotGen.trashcanChance = LotGen.startTrashcanChance;
             LotSpawn.houseChance = LotSpawn.startHouseChance;
             score = 0;
-            Application.LoadLevel(0);
+            Application.LoadLevel(1);
         }
         mainMenu = false;
     }
@@ -137,7 +137,7 @@ public class PumpkinCannon : MonoBehaviour {
         if (escapeToMenu == true)
         {
             mainMenu = true;
-            Application.LoadLevel(0);
+            Application.LoadLevel(1);
         }
 
         //Change Camera 
